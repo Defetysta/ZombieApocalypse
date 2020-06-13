@@ -7,11 +7,12 @@ public class EnemiesSpawningController : MonoBehaviour
     private const int RADIUS = 25;
     private Vector3 randPos;
     private PoolingManager poolingManager;
-    private string enemiesPoolTag = "Enemies";
     private float spawnInterval = 0.1f;
     [SerializeField]
+    private EnemyType desiredEnemy = null;
+    [SerializeField]
     private GameEventRaiser onEnemySpawned = null;
-
+    private GameObject newEnemy = null;
     [SerializeField]
     private IntVariable enemiesPerSpawn = null;
 
@@ -25,7 +26,8 @@ public class EnemiesSpawningController : MonoBehaviour
         yield return new WaitForSeconds(spawnInterval);
         for (int i = 0; i < enemiesPerSpawn.Value; i++)
         {
-            poolingManager.SpawnFromPool(enemiesPoolTag, GetRandomPositionOnCircle() * RADIUS, Quaternion.identity);
+            newEnemy = poolingManager.SpawnFromPool(desiredEnemy.enemyTag, GetRandomPositionOnCircle() * RADIUS, Quaternion.identity);
+            newEnemy.GetComponent<EnemyController>().desiredEnemy = desiredEnemy;
             onEnemySpawned.RaiseEvent();
         }
         yield return SpawnInterval();

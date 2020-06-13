@@ -11,9 +11,9 @@ public class PlayerMovement : MonoBehaviour
     internal Vector3 pointToLookAt;
     private void Awake()
     {
+
         groundPlane = new Plane(Vector3.up, Vector3.zero);
         viewCamera = Camera.main;
-        print("todo::change the way of getting camera");
     }
     void Update()
     {

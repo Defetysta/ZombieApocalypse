@@ -4,12 +4,15 @@ public class EnemyMovement : MonoBehaviour
 {
     private static Transform player;
     private Rigidbody rb;
-    private const float enemyMovementSpeed = 0.3f;
+    private EnemyController controller;
+    private float enemyMovementSpeed;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         if(player == null)
             player = FindObjectOfType<PlayerController>().transform;
+        controller = GetComponent<EnemyController>();
+        enemyMovementSpeed = controller.desiredEnemy.enemySpeed;
     }
     private void OnEnable()
     {
