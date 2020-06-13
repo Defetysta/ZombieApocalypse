@@ -122,3 +122,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da28d54519dd9494aa7dd94ae85c9f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesCount: {fileID: 11400000, guid: 2fbf9f204c30c4a48a9b7ff936175ee2, type: 2}
+  enemiesKilled: {fileID: 11400000, guid: eb876419277acea4e89ce64477bb7f75, type: 2}
