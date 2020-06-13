@@ -15,11 +15,8 @@ public class UpdateText : MonoBehaviour
         baseText = text.text;
         if (desiredValue.ResetOnStart)
             desiredValue.Value = 0;
+        text.text = baseText + desiredValue.Value.ToString();
     }
-    //private void Update()
-    //{
-    //    text.text = baseText + desiredValue.Value.ToString();
-    //}
     public void SetDesiredText()
     {
         text.text = baseText + desiredValue.Value.ToString();

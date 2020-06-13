@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desiredEnemy: {fileID: 11400000, guid: 1bb762cd76cd0cc468edfaf0bd1fd361, type: 2}
   onEnemyKilled: {fileID: 2127772906}
+  onPlayerHit: {fileID: 2127772906}
 --- !u!114 &2127772906
 MonoBehaviour:
   m_ObjectHideFlags: 0
