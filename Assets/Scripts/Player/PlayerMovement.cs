@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Ray ray;
     private Plane groundPlane;
     private float rayDistance;
-    private Vector3 pointToLookAt;
+    internal Vector3 pointToLookAt;
     private void Awake()
     {
         groundPlane = new Plane(Vector3.up, Vector3.zero);

@@ -15,6 +15,7 @@ public class PlayerFire : MonoBehaviour
     private WaitForSeconds awaitEndOfInterval = new WaitForSeconds(0.1f);
     private void Awake()
     {
+        //cam = FindObjectOfType<CameraShake>().GetComponent<Camera>();
         cam = Camera.main;
     }
     private void OnEnable()
@@ -36,7 +37,6 @@ public class PlayerFire : MonoBehaviour
     private void FireProjectile()
     {
         newProjectile = poolingManager.SpawnFromPool(projectilesPoolTag, transform.position, transform.rotation);
-        newProjectile.transform.rotation = gameObject.transform.rotation;
         newProjectile.GetComponent<Rigidbody>().velocity = transform.forward * PROJECTILE_SPEED;
     }
 
