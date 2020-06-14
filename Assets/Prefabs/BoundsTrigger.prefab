@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3194344681690888073}
   - component: {fileID: 3194344681690888070}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BoundsTrigger
   m_TagString: BoundsTrigger
   m_Icon: {fileID: 0}

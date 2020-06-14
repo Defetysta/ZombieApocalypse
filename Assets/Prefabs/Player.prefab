@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8750331495020879176}
   - component: {fileID: 8750331495020879177}
   - component: {fileID: 1490463393}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -107,6 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: {fileID: 11400000, guid: 2f26e4c0b9894d24e9fa8771b36c2838, type: 2}
+  avaliableSpells:
+  - {fileID: 5724401922905292138, guid: 7719f1cfa40d082498fcb72e404b9789, type: 3}
+  - {fileID: 7797020508714082740, guid: f2c3cc6c0a45ca745898e02d5ee0dd78, type: 3}
+  spellGroups: {fileID: 0}
 --- !u!114 &8750331495020879177
 MonoBehaviour:
   m_ObjectHideFlags: 0
