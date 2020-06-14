@@ -15,4 +15,4 @@ MonoBehaviour:
   tag: basicEnemy
   desiredPrefab: {fileID: 737268668267465599, guid: 498c00dcfcdb8df4195b7c9fcb22bbf1,
     type: 3}
-  size: 10000
+  size: 100000

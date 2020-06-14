@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     internal Vector3 pointToLookAt;
     private void Awake()
     {
-
         groundPlane = new Plane(Vector3.up, Vector3.zero);
         viewCamera = Camera.main;
     }
