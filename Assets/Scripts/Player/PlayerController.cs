@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private IntVariable maxHP = null;
+    private IntVariable difficultyLevel = null;
     private int currentHP;
 
     [SerializeField]
@@ -26,7 +24,21 @@ public class PlayerController : MonoBehaviour
     private Image[] spellImages = null;
     private void OnEnable()
     {
-        currentHP = maxHP.Value;
+        switch (difficultyLevel.Value)
+        {
+            case 0:
+                currentHP = 50000;
+                break;
+            case 1:
+                currentHP = 40000;
+                break;
+            case 2:
+                currentHP = 30000;
+                break;
+            default:
+                Debug.LogError("Invalid difficulty level");
+                break;
+        }
         cooldownTexts = new Text[spellGroups.transform.childCount];
         spellImages = new Image[spellGroups.transform.childCount];
         cooldowns = new Dictionary<Spell, float>();

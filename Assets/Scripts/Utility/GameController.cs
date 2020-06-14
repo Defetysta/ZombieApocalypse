@@ -1,10 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-
+    [SerializeField]
+    private Text text = null;
     private void Start()
     {
         StartCoroutine(AwaitDroppingFPS());
@@ -18,5 +20,13 @@ public class GameController : MonoBehaviour
     private void OnDisable()
     {
         Time.fixedDeltaTime = 0.01f;
+    }
+    public void OnGameOver()
+    {
+        TimeSpan t = TimeSpan.FromSeconds(Time.timeSinceLevelLoad);
+        string formatTime = string.Format("{0:D2}m:{1:D2}s",
+                t.Minutes,
+                t.Seconds);
+        text.text = formatTime;
     }
 }

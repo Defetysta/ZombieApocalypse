@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466e1a659ef348641a292a1fb6673cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: {fileID: 11400000, guid: 2f26e4c0b9894d24e9fa8771b36c2838, type: 2}
+  difficultyLevel: {fileID: 11400000, guid: 9c0280b6cb9b18746ab846961ec375c5, type: 2}
   avaliableSpells:
   - {fileID: 5724401922905292138, guid: 7719f1cfa40d082498fcb72e404b9789, type: 3}
   - {fileID: 7797020508714082740, guid: f2c3cc6c0a45ca745898e02d5ee0dd78, type: 3}
