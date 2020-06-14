@@ -93,10 +93,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd9036a55dc0b74ebcc56b05a5cf83a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7415311913048388076}
   spellName: FireStrike
   maxCooldown: 0.4
   velocity: 15
+  damage: 60
 --- !u!54 &4294147741874051986
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;
-    public enum DifficultyLevels { Easy, Medium, Hard };
-    internal DifficultyLevels difficultyLevel = DifficultyLevels.Easy;
+
+    [SerializeField]
+    private IntVariable difficultyLevel = null;
     private void Awake()
     {
         if (Instance == null)
@@ -24,6 +25,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadStartScene()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 
@@ -35,13 +37,8 @@ public class SceneLoader : MonoBehaviour
         Application.Quit();
 #endif
     }
-    public void ChooseDifficulty(DifficultyLevels desiredLevel)
-    {
-        difficultyLevel = desiredLevel;
-    }    
     public void ChooseDifficulty(int desiredLevel)
     {
-        difficultyLevel = (DifficultyLevels)desiredLevel;
-        Debug.Log(difficultyLevel);
+        difficultyLevel.SetValue(desiredLevel);
     }
 }

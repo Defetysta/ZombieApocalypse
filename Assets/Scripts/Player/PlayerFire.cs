@@ -12,7 +12,7 @@ public class PlayerFire : MonoBehaviour
     private GameObject newProjectile;
 
     private WaitUntil awaitInput = new WaitUntil(() => Input.GetMouseButton(0));
-    private WaitForSeconds awaitEndOfInterval = new WaitForSeconds(0.1f);
+    private WaitForSeconds awaitEndOfInterval = new WaitForSeconds(0.02f);
     private void Awake()
     {
         //cam = FindObjectOfType<CameraShake>().GetComponent<Camera>();

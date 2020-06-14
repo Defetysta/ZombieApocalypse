@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class Spell : MonoBehaviour, ICommand
 {
-    public GameObject prefab;
     public string spellName;
     public float maxCooldown;
     public float velocity;
+    public int damage;
     private const string BOUNDS_TRIGGER_TAG = "BoundsTrigger";
     private Rigidbody rb;
     internal static PoolingManager poolingManager;
@@ -34,4 +34,5 @@ public class Spell : MonoBehaviour, ICommand
     {
 
     }
+
 }

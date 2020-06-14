@@ -122,7 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4436339d1c4388e45a1f02245e40f763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7797020508714082741}
   spellName: IceBlast
   maxCooldown: 0.8
   velocity: 10
+  damage: 0
+  speedMultiplier: 0.5
+  duration: 5

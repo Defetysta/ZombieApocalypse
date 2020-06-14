@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8750331495020879176}
   - component: {fileID: 8750331495020879177}
   - component: {fileID: 1490463393}
+  - component: {fileID: 6563641069214506635}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -110,6 +111,7 @@ MonoBehaviour:
   avaliableSpells:
   - {fileID: 5724401922905292138, guid: 7719f1cfa40d082498fcb72e404b9789, type: 3}
   - {fileID: 7797020508714082740, guid: f2c3cc6c0a45ca745898e02d5ee0dd78, type: 3}
+  onPlayerDied: {fileID: 6563641069214506635}
   spellGroups: {fileID: 0}
 --- !u!114 &8750331495020879177
 MonoBehaviour:
@@ -136,3 +138,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 1.0000004, z: 1.5503545}
   m_Center: {x: 0, y: 0.49999994, z: 0.27517703}
+--- !u!114 &6563641069214506635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8750331495327598014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1dce24a31fb3cc4e8ab429c941adbd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCollectEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 60468cdfe4521c14392dafcd25f2af53, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

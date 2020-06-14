@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class IceBlast : Spell
 {
+    public float speedMultiplier;
+    public float duration;
     public override void CastSpell(Transform caster)
     {
-        //GameObject instance = prefab;
-        //Instantiate(instance, caster.position, caster.rotation);
         poolingManager.SpawnFromPool(spellName, caster.position, caster.rotation);
         print("brrrr IceBlast");
     }

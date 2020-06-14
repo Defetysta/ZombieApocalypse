@@ -10,7 +10,10 @@ public class BulletTrigger : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-        else if (other.CompareTag(BOUNDS_TRIGGER_TAG))
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag(BOUNDS_TRIGGER_TAG))
         {
             gameObject.SetActive(false);
         }

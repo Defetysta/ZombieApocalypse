@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Dictionary<Spell, float> cooldowns;
 
+
+    [SerializeField]
+    private GameEventRaiser onPlayerDied = null;
     [SerializeField]
     private GameObject spellGroups = null;
     private Text[] cooldownTexts = null;
@@ -50,7 +53,9 @@ public class PlayerController : MonoBehaviour
     private IEnumerator AwaitPlayerDying()
     {
         yield return new WaitUntil(() => currentHP <= 0);
+        onPlayerDied.RaiseEvent();
         Debug.Log("Player died!");
+        Time.timeScale = 0;
     }
 
 
@@ -104,7 +109,7 @@ public class PlayerController : MonoBehaviour
             cdText.text = cd.ToString("0.00");
             yield return null;
         }
-        img.color = Color.white;
+        img.color = Color.green;
         cdText.text = "0";
     }
 }

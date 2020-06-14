@@ -7,15 +7,18 @@ public class EnemyController : MonoBehaviour
     private int healthPoints;
     private const string PROJECTILE_TAG = "PlayerProjectile";
     private const string PLAYER_TAG = "Player";
-    private int damagePerProjectile = 60;
+    private const string SPELL_TAG = "Spell";
+    private int damagePerBullet = 60;
     [SerializeField]
     private GameEventRaiser onEnemyKilled = null;
     [SerializeField]
     private GameEventRaiser onPlayerHit = null;
     private Renderer rend;
+    private EnemyMovement movementController = null;
     private void Awake()
     {
         rend = GetComponent<Renderer>();
+        movementController = GetComponent<EnemyMovement>();
     }
     private void OnEnable()
     {
@@ -26,7 +29,23 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(PROJECTILE_TAG))
-            GetDamage();
+            GetDamage(damagePerBullet);
+        else if (other.CompareTag(SPELL_TAG))
+        {
+            switch (other.GetComponent<Spell>().spellName)
+            {
+                case "FireStrike":
+                    GetDamage(other.GetComponent<FireStrike>().damage);
+                    break;
+                case "IceBlast":
+                    var iceBlast = other.GetComponent<IceBlast>();
+                    movementController.ApplyMovementSpeedMultiplier(iceBlast.speedMultiplier, iceBlast.duration);
+                    break;
+                default:
+                    Debug.LogError("Unknown spell name");
+                    break;
+            }
+        }
         else if (other.CompareTag(PLAYER_TAG))
         {
             onPlayerHit.RaiseEvent();
@@ -35,13 +54,14 @@ public class EnemyController : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    private void GetDamage()
+    private void GetDamage(int value)
     {
-        healthPoints -= damagePerProjectile;
+        healthPoints -= value;
         if (healthPoints <= 0)
         {
             onEnemyKilled.RaiseEvent();
             gameObject.SetActive(false);
         }
     }
+
 }
